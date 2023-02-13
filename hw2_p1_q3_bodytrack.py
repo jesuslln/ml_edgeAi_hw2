@@ -32,10 +32,10 @@ time_bodytrack = numpy.linspace(freq,freq*len(df_bodytrack),num=len(df_bodytrack
 plot_path = "./plots/question1/"
 
 ## Power Consumption Plot
-plt.figure("W")
-plt.plot(time_bodytrack,df_bodytrack["W"], label='Power Consumption')
+plt.figure("W_body")
+plt.plot(time_bodytrack,df_bodytrack["W"].astype(float), label='Power Consumption')
 plt.xlabel('time s')
-plt.ylabel('Total Power Consumption')
+plt.ylabel('Power W')
 plt.legend()
 plt.grid(True)
 plt.title('Total Power Consumption of Mc1')
@@ -45,9 +45,9 @@ plt.savefig(plot_path + 'power_hw2_q3_bodytrack.png')
 ## Max temperature
 df_temp = df_bodytrack[['temp4', 'temp5', 'temp6', 'temp7']]
 print(df_temp.max())
-plt.figure("T")
+plt.figure("T_body")
 plt.plot(time_bodytrack,
-    df_bodytrack['temp6'], label='Core max temperature')
+    df_bodytrack['temp6'].astype(float), label='Core max temperature')
 plt.xlabel('time s')
 plt.ylabel('Temp ºC')
 plt.legend()

@@ -32,10 +32,10 @@ time = numpy.linspace(freq,freq*len(df),num=len(df))
 plot_path = "./plots/question1/"
 
 ## Power Consumption Plot
-plt.figure("W")
-plt.plot(time,df["W"], label='Power Consumption')
+plt.figure("W_bench")
+plt.plot(time,df["W"].astype(float), label='Power Consumption')
 plt.xlabel('time s')
-plt.ylabel('Total Power Consumption')
+plt.ylabel('Power W')
 plt.legend()
 plt.grid(True)
 plt.title('Total Power Consumption of Mc1')
