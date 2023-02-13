@@ -1,6 +1,8 @@
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 
+import matplotlib.pyplot as plt
+
 # Get Data
 train_df = pd.read_csv("./models_data/training_dataset.csv")
 print(train_df.head())

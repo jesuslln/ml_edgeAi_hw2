@@ -9,7 +9,7 @@ plot_path = "./logs/"
 
 ## read log.txt
 data = []
-with open(plot_path + 'log.txt') as csv_file:
+with open(plot_path + 'tpbench_log.txt') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=" ")
     line_count = 0
     for row in csv_reader:
@@ -33,7 +33,7 @@ plot_path = "./plots/question1/"
 
 ## Power Consumption Plot
 plt.figure("W")
-plt.plot(time,df["W"])
+plt.plot(time,df["W"], label='Power Consumption')
 plt.xlabel('time s')
 plt.ylabel('Total Power Consumption')
 plt.legend()
@@ -44,7 +44,7 @@ plt.savefig(plot_path + 'power_hw2_q1.png')
 for i in range(4):
     col = "usage_c" + str(i+4)
     plt.figure(col)
-    plt.plot(time,df[col], label='training loss')
+    plt.plot(time,df[col], label='Core utilization')
     plt.xlabel('time s')
     plt.ylabel('utilization %')
     plt.legend()
@@ -57,7 +57,7 @@ for i in range(4):
 for i in range(4):
     col = "temp" + str(i+4)
     plt.figure(col)
-    plt.plot(time, df[col], label='training loss')
+    plt.plot(time, df[col], label='Core temperature')
     plt.xlabel('time s')
     plt.ylabel('Temp ºC')
     plt.legend()
